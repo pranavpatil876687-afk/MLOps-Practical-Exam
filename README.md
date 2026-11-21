@@ -1,1 +1,1 @@
-# Breast Cancer MLOps - Version B
+# Breast Cancer MLOps - Version A + B (Resolved)
