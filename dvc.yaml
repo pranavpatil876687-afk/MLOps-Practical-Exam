@@ -1,0 +1,32 @@
+
+stages:
+  collect:
+    cmd: python src/pipeline/collect.py
+    deps:
+      - src/pipeline/collect.py
+    outs:
+      - data/raw/cancer_raw.csv
+
+  preprocess:
+    cmd: python src/pipeline/preprocess.py
+    deps:
+      - src/pipeline/preprocess.py
+      - data/raw/cancer_raw.csv
+    outs:
+      - data/processed/cancer_clean.csv
+
+  features:
+    cmd: python src/pipeline/features.py
+    deps:
+      - src/pipeline/features.py
+      - data/processed/cancer_clean.csv
+    outs:
+      - data/processed/cancer_features.csv
+
+  validate:
+    cmd: python src/pipeline/validate.py
+    deps:
+      - src/pipeline/validate.py
+      - data/processed/cancer_features.csv
+    outs:
+      - data/processed/validation_report.json
