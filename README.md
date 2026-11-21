@@ -1,2 +1,1 @@
-# MLOps-Practical-Exam
-Breast Cancer Classification – MLOps Practical
+# Breast Cancer MLOps - Version B
